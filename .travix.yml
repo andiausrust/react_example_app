@@ -4,6 +4,7 @@ services:
   - docker
 
 before_install:
+  # build image from Dockerfile.dev
   - docker build -t andiausrust/react_example_app -f Dockerfile.dev .
 
 script:
