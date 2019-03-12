@@ -1,0 +1,11 @@
+sudo: required
+services:
+  # install a copy of docker into our container
+  - docker
+
+before_install:
+  - docker build -t andiausrust/react_example_app -f Dockerfile.dev .
+
+script:
+  # -- --coverage so that travis know that the test has finished
+  - docker run andiausrust/react_example_app npm run text -- --coverage
