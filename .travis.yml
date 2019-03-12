@@ -11,7 +11,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "react_example_app" # app name on beanstalk
+  app: "react_example_app"
   env: "ReactExampleApp-env"
   bucket_name: "elasticbeanstalk-us-east-2-668079382745"
   bucket_path: "react_example_app"
