@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run andiausrust/react_example_app npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react_example_app" # app name on beanstalk
+  env: "ReactExampleApp-env"
+  bucket_name: "elasticbeanstalk-us-east-2-668079382745"
+  bucket_path: "react_example_app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
